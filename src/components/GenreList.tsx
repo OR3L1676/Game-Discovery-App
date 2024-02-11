@@ -1,9 +1,8 @@
-import React from "react";
-import useGenres from "../hooks/useGenres";
+import useGenres, { Genre } from "../hooks/useGenres";
 import { List, ListItem } from "@chakra-ui/react";
 
 const GenreList = () => {
-  const { genres, error, isLoading } = useGenres();
+  const { data, isLoading, error } = useGenres();
 
   if (isLoading) {
     return <p>Loading genres...</p>; // Handle loading state
@@ -16,10 +15,8 @@ const GenreList = () => {
   return (
     <>
       <List>
-        {genres &&
-          genres.map((genre) => (
-            <ListItem key={genre.id}>{genre.name}</ListItem>
-          ))}
+        {data &&
+          data.map((genre) => <ListItem key={genre.id}>{genre.name}</ListItem>)}
       </List>
     </>
   );
