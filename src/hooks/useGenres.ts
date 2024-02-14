@@ -1,4 +1,3 @@
-import { ImgProps } from "@chakra-ui/react";
 import useData from "./useData";
 
 export interface Genre {
