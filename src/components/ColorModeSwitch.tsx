@@ -12,9 +12,9 @@ const ColorModeSwitch = () => {
           colorScheme="purple"
         ></Switch>
         {colorMode === "dark" ? (
-          <Text>Dark Mode</Text>
+          <Text whiteSpace="nowrap">Dark Mode</Text>
         ) : (
-          <Text>Light Mode</Text>
+          <Text whiteSpace="nowrap">Light Mode</Text>
         )}
       </HStack>
     </>
