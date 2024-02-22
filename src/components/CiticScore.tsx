@@ -8,11 +8,10 @@ interface Props {
 const CiticScore = ({ score }: Props) => {
   let color =
     score > 85 ? "green" : score > 70 ? "yellow" : score > 0 ? "red" : "";
-
   return (
     <>
       <Badge colorScheme={color} fontSize="14px" padding={2} borderRadius="4px">
-        {score}
+        {score ? score : 'NO SCORE'}
       </Badge>
     </>
   );
