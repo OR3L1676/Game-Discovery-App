@@ -15,6 +15,7 @@ export interface Game {
     icon: string;
     parent_platforms: {platform: Platform}[];
     metacritic: number;
+    rating_top: number;
   }
   
 
