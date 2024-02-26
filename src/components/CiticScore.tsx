@@ -1,5 +1,4 @@
 import { Badge } from "@chakra-ui/react";
-import React from "react";
 
 interface Props {
   score: number;
@@ -11,7 +10,7 @@ const CiticScore = ({ score }: Props) => {
   return (
     <>
       <Badge colorScheme={color} fontSize="14px" padding={2} borderRadius="4px">
-        {score ? score : 'NO SCORE'}
+        {score ? score : "NO SCORE"}
       </Badge>
     </>
   );
