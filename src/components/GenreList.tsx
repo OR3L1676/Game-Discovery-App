@@ -6,6 +6,7 @@ import {
   Image,
   List,
   ListItem,
+  Skeleton,
   Spinner,
 } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
@@ -17,9 +18,48 @@ interface Props {
 
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
+  const genres = [
+    "Action",
+    "Indie",
+    "Adventure",
+    "RPG",
+    "Strategy",
+    "Shooter",
+    "Casual",
+    "Simulation",
+    "Puzzle",
+    "Arcade",
+    "Platformer",
+    "Racing",
+    "Massively Multiplayer",
+    "Sports",
+    "Fighting",
+    "Family",
+    "Board Games",
+    "Educational",
+    "Card",
+  ];
 
   if (isLoading) {
-    return <Spinner></Spinner>; // Handle loading state
+    return (
+      <>
+        <Heading fontSize={"3xl"} marginBottom={3}>
+          Genres
+        </Heading>
+        <List>
+          {genres.map((genre) => (
+            <HStack>
+              <Skeleton height={8} width={8} borderRadius={10} marginY="6px" />
+              <ListItem>
+                <Button fontWeight="noraml" fontSize="lg" variant="link">
+                  {genre}
+                </Button>
+              </ListItem>
+            </HStack>
+          ))}
+        </List>
+      </>
+    ); // Handle loading state
   }
 
   if (error) {
